@@ -1,12 +1,13 @@
 pipeline {
-    agent any 
+    agent any
     stages {
-        stage('Lint Checks') {
-            steps {
-                sh "echo Installing JSlist"
-                sh "npm i jslint"
-                sh "node_modules/jslint/bin/jslint.js server.js"
+        stage ('Lint checks for node Js'){
+            steps{
+            sh "echo Installing JS Lint"
+            sh "npm -i jslint"
+            sh "/home/centos/node_modules/jslint/bin/jslint.js server.js "
             }
         }
     }
 }
+
